@@ -65,12 +65,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-
+When it returns the function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-
+It is always completely random. It's not recording the previous iterations.
 
 c. What is the lexical scope of `newRoll`? 
-
+Within the function scope of 'function'.
 
 
 ### Task 3 - Stretch Goals
