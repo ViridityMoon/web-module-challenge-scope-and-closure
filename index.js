@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * I don't believe there is actually any differences in actual functionality.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter1, it returns a new function.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * Closures are very useful when recording data, ie they don't reset the counter when they go again. The other is better when info is not needed to be recorded multiple times.
 */
 
 // counter1 code
@@ -52,15 +52,28 @@ function counter2() {
 }
 
 
+// console.log(counter1())
+// console.log(counter1())
+// console.log(counter1())
+// console.log(counter1())
+
+
+// console.log(counter2())
+// console.log(counter2())
+// console.log(counter2())
+// console.log(counter2())
+
+
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+// Has to start with the smaller number as num1
+function inning(num1, num2){
+  return(Math.round(Math.random() * (num2 - num1) + num1))
 }
+
+console.log(inning(0, 2))
 
 /* Task 3: finalScore()
 
@@ -76,9 +89,8 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, innings){
 
-  /*Code Here*/
 
 }
 
