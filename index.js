@@ -73,11 +73,11 @@ function inning(num1, num2){
   return(Math.round(Math.random() * (num2 - num1) + num1))
 }
 
-console.log(inning(0, 2))
-
+// console.log(inning(0, 2))
+// console.log(score);
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and returns the final score of the game in the form of an object.
 
 For example, 
 
@@ -88,11 +88,25 @@ finalScore(inning, 9) might return:
 }
 
 */ 
+function finalScore(callback, num3){
+  let homeScore = 0;
+  let awayScore = 0;
 
-function finalScore(inning, innings){
-
-
+  for (let i=0;i<num3;i++){
+    homeScore += callback(0, 2);
+    awayScore += callback(0, 2);
+    // console.log(homeScore);
+    // console.log(awayScore);
+  } 
+  var newObject = {
+    "Home": homeScore,
+    "Away": awayScore,
+  };
+  return newObject
 }
+  
+// console.log(finalScore(inning, 9))
+
 
 /* Task 4: 
 
@@ -115,8 +129,23 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(callback, num4) {
+  let homeScore = 0
+  let awayScore = 0
+  for (let i=0;i<=num4;i++){
+    homeScore += callback(0, 2);
+    awayScore += callback(0, 2);
+    if (i === 0){
+      console.log(`1st inning: ${homeScore} - ${awayScore}`);
+    } else if(i === 1){
+      console.log(`2nd inning: ${homeScore} - ${awayScore}`);
+    } else if(i === 2){
+      console.log(`3rd inning: ${homeScore} - ${awayScore}`);
+    } else if(i >= 3){
+      console.log(`${i}th inning: ${homeScore} - ${awayScore}`);
+    }
+
+  }
 }
 
-
+scoreboard(inning, 9)
